@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Axios from "axios";
 function App() {
   Axios.defaults.withCredentials = true;
@@ -24,6 +24,7 @@ function App() {
       username: usernameLog,
       password: passwordLog,
     }).then((response) => {
+      console.log(response);
       if (!response.data.auth) {
         setLoginStatus(false);
       } else {
